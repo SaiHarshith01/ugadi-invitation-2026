@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ugadi Invitation | Savithramma's Family</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;1,700&family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --mango-green: #2e7d32;
+            --marigold-orange: #ff9800;
+            --turmeric-yellow: #ffc107;
+            --warm-white: #fffdf5;
+            --deep-red: #b71c1c;
+            --leaf-gradient: linear-gradient(135deg, #2e7d32, #4caf50);
+        }
+
+        body, html {
+            margin: 0; padding: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--warm-white);
+            background-image: radial-gradient(#fff9c4 0.5px, transparent 0.5px);
+            background-size: 20px 20px;
+            color: #444;
+            overflow-x: hidden;
+        }
+
+        /* --- CORNER ANIMATED WISH --- */
+        .corner-wish {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            pointer-events: none;
+        }
+
+        .flower-spinner {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle, #ffeb3b, #ff9800, #f44336);
+            border-radius: 50%;
+            position: relative;
+            box-shadow: 0 0 20px rgba(255, 152, 0, 0.6);
+            animation: rotateFlower 10s linear infinite;
+        }
+
+        /* Petal details */
+        .flower-spinner::before {
+            content: "✿";
+            font-size: 70px;
+            color: rgba(255, 255, 255, 0.4);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .wish-text-anim {
+            margin-top: 10px;
+            font-weight: 600;
+            color: var(--deep-red);
+            text-shadow: 1px 1px 5px white;
+            animation: pulseText 3s ease-in-out infinite;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @keyframes rotateFlower {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes pulseText {
+            0%, 100% { opacity: 0.3; transform: scale(0.9); }
+            50% { opacity: 1; transform: scale(1.1); }
+        }
+
+        /* --- PAGE LAYOUT --- */
+        .toran {
+            position: absolute; top: 0; left: 0; width: 100%; height: 100px;
+            display: flex; justify-content: space-around; z-index: 100;
+        }
+
+        .leaf {
+            width: 35px; height: 90px;
+            background: var(--leaf-gradient);
+            border-radius: 0% 100% 35% 65% / 0% 65% 35% 100%;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+            transform-origin: top center;
+            animation: sway 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes sway {
+            0% { transform: rotate(-6deg); }
+            100% { transform: rotate(6deg); }
+        }
+
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                        url('family.jpeg') no-repeat center center/cover;
+            display: flex; flex-direction: column; justify-content: center;
+            align-items: center; text-align: center; color: white;
+            border-bottom: 10px solid var(--marigold-orange);
+        }
+
+        .hero h1 {
+            font-family: 'Lora', serif;
+            font-size: clamp(2rem, 8vw, 4.5rem);
+            margin: 0;
+            animation: glow 2.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from { text-shadow: 0 0 10px #fff; }
+            to { text-shadow: 0 0 20px var(--turmeric-yellow), 0 0 30px var(--marigold-orange); }
+        }
+
+        .main-container {
+            max-width: 850px;
+            margin: -60px auto 40px;
+            background: white;
+            padding: 50px 30px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative; z-index: 10;
+        }
+
+        .village-tag {
+            display: inline-block;
+            background: var(--mango-green);
+            color: white;
+            padding: 5px 20px;
+            border-radius: 50px;
+            margin: 15px 0;
+            font-weight: 600;
+        }
+
+        .details-box {
+            background: #fffdf5;
+            border: 1px dashed var(--marigold-orange);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 15px;
+        }
+
+        footer {
+            background: var(--mango-green);
+            color: white;
+            padding: 40px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="corner-wish">
+        <div class="flower-spinner"></div>
+        <div class="wish-text-anim">ఉగాది<br>శుభాకాంక్షలు</div>
+    </div>
+
+    <div class="toran">
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+        <div class="leaf"></div><div class="leaf"></div><div class="leaf"></div>
+    </div>
+
+    <header class="hero">
+        <h1>ఉగాది శుభాకాంక్షలు</h1>
+        <p>శ్రీ పరాభవ నామ సంవత్సర శుభాకాంక్షలు</p>
+    </header>
+
+    <main class="main-container">
+        <h2 style="color:var(--deep-red); font-family:'Lora';">ఆత్మీయ ఆహ్వానం</h2>
+        <p>సవిుత్రమ్మ గారి కుటుంబ సభ్యులందరికీ నమస్కారం.</p>
+        
+        <div class="village-tag">వేదిక: బేతంపూడి గ్రామం</div>
+
+        <div class="details-box">
+            <h3>కుటుంబ సభ్యుల కలయిక</h3>
+            <p><b>తేదీ:</b> రేపు (మార్చి 20, 2026)</p>
+            <p>సావిత్రమ్మ గారి కుటుంబం తరపున నిర్వహించబడుతున్న ఈ ఉగాది వేడుకలకు మీ అందరికీ ఇదే మా ఆదరపూర్వక ఆహ్వానం.</p>
+        </div>
+
+        <p>మన మూలాలను, మన కుటుంబాన్ని, మరియు నూతన సంవత్సరపు రుచులను కలిసి జరుపుకోవడానికి బెతంపూడిలో సమావేశమవుదాం.</p>
+    </main>
+
+    <footer>
+        <p>మీ రాక మాకు ఎంతో సంతోషం!</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">Savithramma Family Gathering | Bethampudi Village</p>
+    </footer>
+
+</body>
+</html>
